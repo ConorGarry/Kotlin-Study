@@ -1,11 +1,9 @@
-package ie.conorgarry.study_kotlin_android
+package ie.conorgarry.study_kotlin_android.ui.activities
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
+import ie.conorgarry.study_kotlin_android.*
 import kotlinx.android.synthetic.main.activity_viewgroup.*
 import timber.log.Timber
 
@@ -16,15 +14,15 @@ import timber.log.Timber
  * Allowing ViewGroups to behave more like Collections.
  */
 
-class ViewGroupCollectionActivity : AppCompatActivity() {
+class ViewGroupCollectionActivity : BaseActivity() {
 
-    companion object {
-        fun start(context: Context) {
-            val starter = Intent(context, ViewGroupCollectionActivity::class.java)
-            //        starter.putExtra();
-            context.startActivity(starter)
-        }
-    }
+//    companion object {
+//        fun start(context: Context) {
+//            val starter = Intent(context, ViewGroupCollectionActivity::class.java)
+//            //        starter.putExtra();
+//            context.startActivity(starter)
+//        }
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

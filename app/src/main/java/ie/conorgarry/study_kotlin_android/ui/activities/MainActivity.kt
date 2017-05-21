@@ -1,9 +1,12 @@
-package ie.conorgarry.study_kotlin_android
+package ie.conorgarry.study_kotlin_android.ui.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import ie.conorgarry.study_kotlin_android.R
+import ie.conorgarry.study_kotlin_android.RvMainMenuAdapter
+import ie.conorgarry.study_kotlin_android.model.MainMenuItemViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -14,7 +17,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        val mMenuItems: MutableList<String> = mutableListOf("ViewGroup Collections")
+        val mMenuItems: MutableList<MainMenuItemViewModel> = mutableListOf(
+                MainMenuItemViewModel("Higher Order Functions", HigherOrderFuncActivity::class.java),
+                MainMenuItemViewModel("Collections", CollectionsStudyActivity::class.java),
+                MainMenuItemViewModel("ViewGroup Collections", ViewGroupCollectionActivity::class.java)
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
