@@ -1,0 +1,238 @@
+/**
+ *  To use this file:
+ *  apply from: rootProject.file('<projecthome>/dependencies.gradle')
+ *  in global build.gradle
+ *
+ * */
+
+ext {
+    compileSdkVersion = 25
+    buildToolsVersion = '25.0.3'
+//    minSdkVersion = 14
+    // Pre 21 is slow build
+    minSdkVersion = 21
+    targetSdkVersion = 25
+    sourceCompatibilityVersion = JavaVersion.VERSION_1_8
+    targetCompatibilityVersion = JavaVersion.VERSION_1_8
+
+
+    gradlePluginVersion = '2.1.3'
+    gradlePluginVersionExperimental = '2.4.0-alpha7'
+    supportLibrariesVersion = '25.3.1'
+    playServicesVersion = '10.2.4'
+    playServicesMapsVersion = '10.2.1' // todo can this map play services version?
+    googleAndroidMapUtilsVersion = '0.5'
+    firebaseMessagingVersion = '10.2.1'
+    retrofitVersion = '2.1.0'
+    constraintLayoutVersion = '1.0.2'
+    butterknifeVersion = '8.4.0'
+    picassoVersion = '2.5.2'
+    glideVersion = '3.7.0'
+    rxJavaVersion = '1.3.0'
+    rxAndroidVersion = '1.2.1'
+    eventBusVersion = '3.0.0'
+    jobQueueVersion = '2.0.1'
+    okhttpVersion = '3.6.0'
+    gsonVersion = '2.7'
+    okioVersion = '1.11.0'
+    disLruCacheVersion = '2.0.2'
+    timberVersion = '4.1.2'
+    leakCanaryVersion = '1.3.1'
+    apacheCommonsLang3Version = '3.5'
+    apacheCommonsIoVersion = '2.5'
+    sqlBriteVersion = '1.1.1'
+    sqlDelightVersion = '0.6.1'
+    retroLambdaVersion = '2.3.0'
+    autoValueVersion = '1.3'
+    autoValueGsonVerion = '0.4.2'
+    autoValueParcelVersion = '0.2.4-rc2'
+    javaPoetVersion = '1.7.0'
+    robolectricVersion = '3.1'
+    crashlyticsVersion = '2.5.7@aar'
+    mockitoVersion = '2.7.22'
+    mockitoCoreVersion = '1.9.5'
+    daggerVersion = '2.8'
+    hamcrestVersion = '1.3'
+    espressoVersion = '2.2.2'
+    jUnitVersion = "4.12"
+    runnerVersion = '0.5'
+    androidAptVersion = '1.8'
+
+
+    dep = [
+            androidPlugin      : "com.android.tools.build:gradle:$gradlePluginVersion",
+            appCompat           : "com.android.support:appcompat-v7:$supportLibrariesVersion",
+            supportV4          : "com.android.support:support-v4:$supportLibrariesVersion",
+            supportAnnotations : "com.android.support:support-annotations:$supportLibrariesVersion",
+            playServices       : "com.google.android.gms:play-services:$playServicesVersion",
+            playServicesGcm     : "com.google.android.gms:play-services-gcm:$playServicesVersion",
+            playServicesMaps   : "com.google.android.gms:play-services-maps:$playServicesMapsVersion",
+            androidMapUtils    : "com.google.maps.android:android-maps-utils:0.5$googleAndroidMapUtilsVersion",
+            recyclerView        : "com.android.support:recyclerview-v7:$supportLibrariesVersion",
+            cardView            : "com.android.support:cardview-v7:$supportLibrariesVersion",
+            firebaseMessaging   : "com.google.firebase:firebase-messaging:$firebaseMessagingVersion",
+            retrofit           : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitConverter  : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitRxAdapter  : "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion",
+            constraintLayout   : "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
+            picasso            : "com.squareup.picasso:picasso:$picassoVersion",
+            glide            : "com.github.bumptech.glide:glide:$glideVersion",
+            butterKnife        : "com.jakewharton:butterknife:$butterknifeVersion",
+            butterknifeCompiler     : "com.jakewharton:butterknife-compiler:$butterknifeVersion",
+            rxJava             : "io.reactivex:rxjava:$rxJavaVersion",
+            rxAndroid          : "io.reactivex:rxandroid:$rxAndroidVersion",
+            rxAndroid2          : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            rxBroadcast         : "com.cantrowitz:rxbroadcast:2.0.0",
+            rxBinding          : "com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.3.0",
+            eventBus           : "org.greenrobot:eventbus:$eventBusVersion",
+            jobqueue           : "com.birbit:android-priority-jobqueue:$jobQueueVersion",
+            okhttp             : "com.squareup.okhttp3:okhttp:$okhttpVersion",
+            okhttpLogIntercept          : "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
+            mockWebServer      : "com.squareup.okhttp3:mockwebserver:$okhttpVersion",
+            gson                : "com.google.code.gson:gson:$gsonVersion",
+            okio             : "com.squareup.okio:okio:$okioVersion",
+            diskLruCache         : "com.jakewharton:disklrucache:$disLruCacheVersion",
+            timber             : "com.jakewharton.timber:timber:$timberVersion",
+            leakCanary             : "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion",
+            apacheCommonsLang3  : "org.apache.commons:commons-lang3:$apacheCommonsLang3Version",
+            apacheCommonsIo     : "commons-io:commons-io:$apacheCommonsIoVersion",
+            greenDao            : "org.greenrobot:greendao:3.2.0",
+            sqlBrite         : "com.squareup.sqlbrite:sqlbrite:$sqlBriteVersion",
+//                exclude group: "com.android.support", module: "support-annotations"
+            retrolambdaConfig  : "net.orfjackal.retrolambda:retrolambda:$retroLambdaVersion",
+            autoValueApt        : "com.google.auto.value:auto-value:$autoValueVersion",
+            autoValueAnnotProvided :  "com.jakewharton.auto.value:auto-value-annotations:$autoValueVersion",
+            autoValueGsonProvided :  "com.ryanharter.auto.value:auto-value-gson:$autoValueGsonVerion",
+            autoValueParcelApt  : "com.ryanharter.auto.value:auto-value-parcel:$autoValueParcelVersion",
+            autoValueGsonApt    : "com.ryanharter.auto.value:auto-value-gson:$autoValueGsonVerion",
+            javaPoetApt         : "com.squareup:javapoet:$javaPoetVersion",
+            dagger              : "com.google.dagger:dagger:$daggerVersion",
+            daggerCompiler      : "com.google.dagger:dagger-compiler:$daggerVersion",
+            nammuPermissions    : "com.github.tajchert:nammu:1.1.3",
+
+            icepick             : "frankiesardo:icepick:3.2.0",
+            icepicProcessor     : 'frankiesardo:icepick-processor:3.2.0',
+            hockeyapp           : "compile 'net.hockeyapp.android:HockeySDK:3.5.0",
+            jodDanLew           : "compile 'net.danlew:android.joda:2.9.1",
+            multiDex            : "com.android.support:multidex:1.0.1",
+            googleDexMaker      : "com.google.dexmaker:dexmaker:1.2",
+            googleDexMakerMockito : "com.google.dexmaker:dexmaker-mockito:1.2",
+            uuidGenerator :  "com.fasterxml.uuid:java-uuid-generator:3.1.4",
+            hugo        : "com.jakewharton.hugo:hugo-annotations:1.2.1",
+
+            // Debug
+            tinyDancer :  "com.github.brianPlummer:tinydancer:0.0.9",
+            setho     : "com.facebook.stetho:stetho:1.4.0",
+            ghostLog    : "com.readystatesoftware.ghostlog:ghostlog-integration:+@aar",
+            logCatViewerAaron     : "com.github.smithaaron.LogcatViewer:logcatviewer:a1b7d3495",
+            findBugs     : "com.google.code.findbugs:jsr305:3.0.1",
+            glassfishCompile     : "org.glassfish:javax.annotation:10.0-b28",
+            glassfishApt    : "org.glassfish:javax.annotation:10.0-b28",
+
+            // Ui / Widgets
+            photoView     : "com.github.chrisbanes.photoview:library:1.2.3",
+            imageZoom     : "it.sephiroth.android.library.imagezoom:imagezoom:+",
+            stickListHeaders     : "se.emilsjolander:stickylistheaders:2.7.0",
+            stickyHeadersRecyclerView     : "com.timehop.stickyheadersrecyclerview:library:0.4.3", // TODO: Don't think I need this one
+            rvFlexibleDivider     : "com.yqritc:recyclerview-flexibledivider:1.2.9",
+            wheelPicker     : "cn.aigestudio.wheelpicker:WheelPicker:1.1.2",
+            circleIndicator     : "me.relex:circleindicator:1.2.1@aar",
+
+            // Media players
+            exoPlayer     : "com.google.android.exoplayer:exoplayer:r2.2.0",
+            dualCache     : "com.vincentbrison.openlibraries.android:dualcache:3.0.0",
+
+            // Third Party Interaction / Api's
+            crashlytics     : "com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion",
+//                    { transitive = true; },
+            embedly : "com.embedly:embedly-api:0.1.5",
+//                    { exclude group: 'org.json', module: 'json'
+//                exclude module: 'commons-logging'
+//                exclude module: 'commons-lang'
+//                exclude module: 'httpcore'
+//                exclude module: 'httpclient' },
+            zendesk : "com.zendesk:sdk-providers:1.7.1.1",
+//                    { //Exclude zendesk support lib dependancies in favour of our own
+//                exclude module: 'appcompat-v7';
+//                exclude module: 'support-v4';
+//                exclude module: 'design';
+//                exclude module: 'recyclerview-v7' },
+            stripe : "com.stripe:stripe-android:1.0.5",
+            twitter : "com.twitter.sdk.android:twitter:1.9.0@aar",
+//                    { transitive = true; },
+            facebook : "com.facebook.android:facebook-android-sdk:4.11.0",
+            mixpanel : "com.mixpanel.android:mixpanel-android:4.9.6",
+            branchIo : "io.branch.sdk.android:library:2.5.6",
+//                    { exclude module: 'answers.shim' },
+            // Testing
+            jUnit              : "junit:junit:$jUnitVersion",
+            testRunner          : "com.android.support.test:runner:$runnerVersion",
+            testRules           : "com.android.support.test:rules:$runnerVersion",
+            robolectric        : "org.robolectric:robolectric:$robolectricVersion",
+            roboLectricShadows  : 'org.robolectric:shadows-multidex:3.0',
+            mockito            : "org.mockito:mockito-core:$mockitoCoreVersion",
+            espresso        : "com.android.support.test.espresso:espresso-contrib:$espressoVersion",
+            espressoCore        : "com.android.support.test.espresso:espresso-core:2.2.2",
+            espressoIntents     :  "com.android.support.test.espresso:espresso-intents:2.2.2",
+            hamcrestCore     :  "org.hamcrest:hamcrest-core:$hamcrestVersion",
+            hamcrestLibrary     :  "org.hamcrest:hamcrest-library:$hamcrestVersion",
+            hamcrestIntegration     :  "org.hamcrest:hamcrest-integration:$hamcrestVersion",
+
+            // Kotlin  Specific
+            timberkt    :  "com.github.ajalt:timberkt:1.2.0" // Require jitpack
+
+            // Global build.gradle
+            // Note that the 'apply from:' will have to be declared first in 'buildscript'
+            // for global gradle to find class paths. https://discuss.gradle.org/t/usage-of-apply-from-in-buildscript-scope/1844/5
+            // androidPlugin at top of file or for newest experimental alpha/beta...
+
+    ]
+    isCi = "true".equals(System.getenv('CI'))
+
+    classPathUrls = [
+            androidPluginExperimental : "com.android.tools.build:gradle:$gradlePluginVersionExperimental",
+            sqlDelight : "com.squareup.sqldelight:gradle-plugin:$sqlDelightVersion",
+            androidApt : "com.neenbedankt.gradle.plugins:android-apt:$androidAptVersion",
+            googleServices:  "com.google.gms:google-services:3.0.0",
+            fabric     : "io.fabric.tools:gradle:1.+",
+            retrolambda : "me.tatarka:gradle-retrolambda:3.2.5",
+            retroLambaLombod : "me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2",
+            // May be needed, but not after Android Studio 2.4 is release :)
+            // Exclude the version that the android plugin depends on.
+//            configurations.classpath.exclude group: 'com.android.tools.external.lombok'
+            hugo : "com.jakewharton.hugo:hugo-plugin:1.2.1",
+            novoda : "com.novoda:bintray-release:0.3.4",
+            awsDeviceFarm : "com.amazonaws:aws-devicefarm-gradle-plugin:1.2"
+    ]
+
+    pluginUrls = [
+            sqlDelight : "com.squareup.sqldelight",
+            androidApt : "com.neenbedankt.android-apt", // todo  still needed?
+            hugo        : "com.jakewharton.hugo",
+            retroLamnda : "me.tatarka.retrolambda",
+            fabric      : "io.fabric",
+            playServices : "com.google.gms.google-services"
+    ]
+
+    repos = [
+        mavenFabric : "https://maven.fabric.io/public", // maven { url 'https://maven.fabric.io/public' }
+        mavenPopulov  : "http://dl.bintray.com/populov/maven", // ?? From Vero { url 'http://dl.bintray.com/populov/maven' }
+        mavenClojars : "https://clojars.org/repo/" // IcePick ?? From Vero { url 'https://clojars.org/repo/' }
+        // jcenter()
+
+    ]
+}
+
+
+//            truth              : "com.google.truth:truth:0.30",
+//            bugsnag            : "com.bugsnag:bugsnag:2.0.0",
+//            pollexor           : 'com.squareup:pollexor:2.0.4',
+//            fest               : 'org.easytesting:fest-assert-core:2.0M10',
+//            festAndroid        : 'com.squareup:fest-android:1.0.6',
+//            compile             : group      : "com.googlecode.plist", name: "dd-plist", version: "1.3"
+
+// In Vero Global build.gradle
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}
+
