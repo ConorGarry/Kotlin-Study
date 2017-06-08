@@ -7,7 +7,9 @@ import android.view.View
 import ie.conorgarry.study_kotlin_android.R
 import ie.conorgarry.study_kotlin_android.RvMainMenuAdapter
 import ie.conorgarry.study_kotlin_android.model.MainMenuItemViewModel
+import ie.conorgarry.study_kotlin_android.sInstance
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 
 /**
  * Landing page of Kotlin Study, holds  a menu that leads to sub categorised studies.*
@@ -30,5 +32,6 @@ class MainActivity : AppCompatActivity() {
         tv_main_text.visibility = View.GONE
         rv_main_menu.adapter = RvMainMenuAdapter(mMenuItems)
         rv_main_menu.layoutManager = LinearLayoutManager(this)
+        Timber.d("App instance: ${sInstance}")
     }
 }

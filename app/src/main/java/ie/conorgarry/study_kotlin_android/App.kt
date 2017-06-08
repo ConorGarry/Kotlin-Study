@@ -8,6 +8,8 @@ import timber.log.Timber
  * Created by conor on 19/05/2017.
  */
 
+var sInstance: App? = null
+
 class App : Application() {
 
     override fun onCreate() {
@@ -18,13 +20,13 @@ class App : Application() {
         }
     }
 
-    companion object {
-        private var sInstance: App? = null
-        const val STRING_CONSTANT = "HELLO_CONSTANT"
-        fun get(): App? {
-            return sInstance
-        }
-    }
+//    companion object {
+////        private var sInstance: App? = null
+//        const val STRING_CONSTANT = "HELLO_CONSTANT"
+//        fun get(): App? {
+//            return sInstance
+//        }
+//    }
 
     /** Could also be done like this
      *

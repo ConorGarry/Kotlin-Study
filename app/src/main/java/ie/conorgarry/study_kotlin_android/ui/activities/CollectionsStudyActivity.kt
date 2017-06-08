@@ -1,7 +1,6 @@
 package ie.conorgarry.study_kotlin_android.ui.activities
 
 import android.os.Bundle
-
 import ie.conorgarry.study_kotlin_android.R
 import timber.log.Timber
 
